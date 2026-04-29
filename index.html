@@ -1,1 +1,334 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Observer Trial Access</title>
+  <meta name="description" content="Observer Trial License Key request form." />
+  <style>
+    :root {
+      --bg: #0b0c0e;
+      --card: #121419;
+      --card2: #171a21;
+      --text: #f3f4f6;
+      --muted: #9ca3af;
+      --line: #2a2f3a;
+      --accent: #c8f04a;
+      --danger: #ff6b6b;
+      --ok: #8cffb0;
+    }
 
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at top left, rgba(200, 240, 74, 0.12), transparent 34%),
+        linear-gradient(180deg, #0b0c0e 0%, #08090b 100%);
+      color: var(--text);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .wrap {
+      width: 100%;
+      max-width: 760px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid var(--line);
+      color: var(--accent);
+      background: rgba(200, 240, 74, 0.06);
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-size: 13px;
+      letter-spacing: 0.04em;
+      margin-bottom: 18px;
+    }
+
+    .card {
+      background: linear-gradient(180deg, var(--card) 0%, var(--card2) 100%);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.42);
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(32px, 6vw, 56px);
+      line-height: 1.0;
+      letter-spacing: -0.06em;
+    }
+
+    .lead {
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.8;
+      margin: 0 0 26px;
+    }
+
+    .form {
+      display: grid;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    label {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    input {
+      width: 100%;
+      border: 1px solid var(--line);
+      background: #0c0e12;
+      color: var(--text);
+      border-radius: 14px;
+      padding: 16px;
+      font-size: 16px;
+      outline: none;
+    }
+
+    input:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(200, 240, 74, 0.12);
+    }
+
+    button {
+      border: 0;
+      border-radius: 14px;
+      background: var(--accent);
+      color: #10120d;
+      padding: 16px 18px;
+      font-weight: 800;
+      font-size: 15px;
+      cursor: pointer;
+    }
+
+    button:disabled {
+      opacity: 0.55;
+      cursor: not-allowed;
+    }
+
+    .note {
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    .result {
+      margin-top: 18px;
+      padding: 16px;
+      border-radius: 16px;
+      border: 1px solid var(--line);
+      background: #0c0e12;
+      display: none;
+      white-space: pre-wrap;
+      word-break: break-word;
+      line-height: 1.6;
+      font-size: 14px;
+    }
+
+    .result.ok {
+      display: block;
+      border-color: rgba(140, 255, 176, 0.35);
+      color: var(--ok);
+    }
+
+    .result.ng {
+      display: block;
+      border-color: rgba(255, 107, 107, 0.35);
+      color: var(--danger);
+    }
+
+    .keyBox {
+      margin-top: 12px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 14px;
+      color: var(--text);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 12px;
+      line-height: 1.6;
+      word-break: break-all;
+    }
+
+    .copyBtn {
+      margin-top: 12px;
+      width: 100%;
+      background: transparent;
+      color: var(--accent);
+      border: 1px solid rgba(200, 240, 74, 0.35);
+    }
+
+    .steps {
+      margin-top: 22px;
+      border-top: 1px solid var(--line);
+      padding-top: 18px;
+      display: grid;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .steps strong {
+      color: var(--text);
+    }
+
+    footer {
+      text-align: center;
+      color: #6b7280;
+      font-size: 12px;
+      margin-top: 18px;
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="badge">Observer Trial Access</div>
+
+    <section class="card">
+      <h1>Observer Trial Key</h1>
+      <p class="lead">
+        メールアドレスを入力すると、ObserverのTrial License Keyを発行します。
+        発行されたキーをObserver本体のLicense Key欄に貼り付けてください。
+      </p>
+
+      <div class="form">
+        <label for="email">Email address</label>
+        <input id="email" type="email" placeholder="you@example.com" autocomplete="email" />
+        <button id="requestBtn" type="button">Trial Keyを発行する</button>
+      </div>
+
+      <p class="note">
+        Trialは初回認証から168時間有効です。メール送信に失敗した場合でも、この画面にキーが表示される場合があります。
+      </p>
+
+      <div id="result" class="result"></div>
+
+      <div class="steps">
+        <div><strong>Step 1:</strong> メールアドレスを入力</div>
+        <div><strong>Step 2:</strong> Trial Keyを発行</div>
+        <div><strong>Step 3:</strong> 表示されたLicense KeyをObserverに貼り付け</div>
+      </div>
+    </section>
+
+    <footer>
+      Observer License Form
+    </footer>
+  </main>
+
+  <script>
+    const API_URL = "http://localhost:8089/trial/request";
+
+    const emailInput = document.getElementById("email");
+    const requestBtn = document.getElementById("requestBtn");
+    const result = document.getElementById("result");
+
+    function showResult(type, html) {
+      result.className = "result " + type;
+      result.innerHTML = html;
+    }
+
+    function escapeHtml(value) {
+      return String(value)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+
+    async function copyText(text) {
+      try {
+        await navigator.clipboard.writeText(text);
+        alert("License Keyをコピーしました。");
+      } catch (e) {
+        alert("コピーできませんでした。手動で選択してコピーしてください。");
+      }
+    }
+
+    requestBtn.addEventListener("click", async () => {
+      const email = emailInput.value.trim();
+
+      if (!email || !email.includes("@")) {
+        showResult("ng", "メールアドレスを入力してください。");
+        return;
+      }
+
+      requestBtn.disabled = true;
+      requestBtn.textContent = "発行中...";
+
+      try {
+        const response = await fetch(API_URL, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({ email })
+        });
+
+        const data = await response.json().catch(() => null);
+
+        if (!data) {
+          showResult("ng", "サーバーから正しい応答を受け取れませんでした。");
+          return;
+        }
+
+        if (!response.ok || data.ok === false) {
+          showResult(
+            "ng",
+            "発行できませんでした。\n\n理由: " + escapeHtml(data.message || "Unknown error")
+          );
+          return;
+        }
+
+        const licenseKey = data.licenseKey || "";
+        const tier = data.tier || "TRIAL";
+        const keyId = data.keyId || "-";
+        const message = data.message || "License issued";
+
+        showResult(
+          "ok",
+          "発行成功\n\n" +
+          "Tier: " + escapeHtml(tier) + "\n" +
+          "Key ID: " + escapeHtml(keyId) + "\n" +
+          "Message: " + escapeHtml(message) +
+          "<div class='keyBox' id='licenseKeyBox'>" + escapeHtml(licenseKey) + "</div>" +
+          "<button class='copyBtn' type='button' id='copyBtn'>License Keyをコピー</button>"
+        );
+
+        const copyBtn = document.getElementById("copyBtn");
+        copyBtn.addEventListener("click", () => copyText(licenseKey));
+
+      } catch (e) {
+        showResult(
+          "ng",
+          "接続できませんでした。\n\n" +
+          "原因候補:\n" +
+          "・ObserverLicenseServerが起動していない\n" +
+          "・Cloudflare Tunnel URLが未設定\n" +
+          "・CORSが未設定\n\n" +
+          "詳細: " + escapeHtml(e.message)
+        );
+      } finally {
+        requestBtn.disabled = false;
+        requestBtn.textContent = "Trial Keyを発行する";
+      }
+    });
+  </script>
+</body>
+</html>
