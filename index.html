@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Observer — PC常駐型の自動作業AI</title>
-<meta name="description" content="PCの前にいなくても、開発は進む。スマホから指示し、PC上のObserverがコード修正・ビルド確認・失敗時の復元まで進めます。">
+<meta name="description" content="PCの前にいなくても、開発は進む。スマホから指示し、PC上のObserverがコード修正・ビルド確認・失敗時の復元まで進めます。Trialはキーなし・登録なしで1日5回まで利用できます。">
 
 <meta property="og:title" content="Observer — PC常駐型の自動作業AI">
-<meta property="og:description" content="PCの前にいなくても、開発は進む。スマホから指示し、PC上のObserverがコード修正・ビルド確認・失敗時の復元まで進めます。">
+<meta property="og:description" content="PCの前にいなくても、開発は進む。スマホから指示し、PC上のObserverがコード修正・ビルド確認・失敗時の復元まで進めます。Trialはキーなし・登録なしで1日5回まで利用できます。">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Observer">
 <meta name="twitter:card" content="summary_large_image">
@@ -168,7 +168,7 @@
     font-size: 15px;
     color: var(--muted);
     line-height: 2;
-    max-width: 620px;
+    max-width: 660px;
     border-left: 2px solid var(--border-bright);
     padding-left: 20px;
     margin-bottom: 48px;
@@ -205,12 +205,6 @@
   .btn-primary:hover {
     background: #d9ff5a;
     transform: translateY(-1px);
-  }
-
-  .btn-primary:disabled {
-    opacity: 0.55;
-    cursor: not-allowed;
-    transform: none;
   }
 
   .btn-secondary {
@@ -764,7 +758,7 @@
     border: 1px solid var(--border);
     padding: 32px;
     display: grid;
-    gap: 20px;
+    gap: 24px;
   }
 
   .trial-block h3 {
@@ -778,85 +772,66 @@
   .trial-block p {
     font-size: 12px;
     color: var(--muted);
-    line-height: 1.7;
+    line-height: 1.8;
   }
 
-  .trial-form {
+  .trial-grid {
     display: grid;
-    gap: 12px;
-    margin-top: 8px;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
   }
 
-  .trial-form label {
-    font-size: 11px;
+  .trial-cell {
+    background: var(--bg);
+    padding: 24px;
+  }
+
+  .trial-cell h4 {
+    font-family: var(--sans);
+    font-size: 14px;
+    color: var(--accent);
+    margin-bottom: 12px;
+  }
+
+  .trial-cell ul {
+    list-style: none;
+    display: grid;
+    gap: 8px;
+  }
+
+  .trial-cell li {
+    font-size: 12px;
     color: var(--muted);
-    letter-spacing: 0.08em;
+    line-height: 1.7;
+    display: flex;
+    gap: 8px;
   }
 
-  .trial-form input {
-    width: 100%;
-    background: #0b0c0e;
-    color: var(--text);
-    border: 1px solid var(--border-bright);
-    padding: 13px 14px;
-    font-family: var(--mono);
-    font-size: 13px;
-    outline: none;
-  }
-
-  .trial-form input:focus {
-    border-color: var(--accent-dim);
-  }
-
-  .trial-api-note {
-    font-size: 10px;
-    color: var(--muted);
-    word-break: break-all;
-    border-left: 1px solid var(--border-bright);
-    padding-left: 12px;
-  }
-
-  .trial-api-note span {
+  .trial-cell li::before {
+    content: '—';
     color: var(--accent);
   }
 
-  .result {
-    display: none;
+  .trial-message {
     border: 1px solid var(--border-bright);
-    padding: 16px;
-    font-size: 12px;
-    line-height: 1.7;
-    word-break: break-word;
-    white-space: pre-wrap;
     background: #0b0c0e;
+    padding: 20px;
   }
 
-  .result.ok {
+  .trial-message strong {
     display: block;
-    color: var(--ok);
-    border-color: rgba(140, 255, 176, 0.35);
+    color: var(--accent);
+    font-family: var(--sans);
+    font-size: 15px;
+    margin-bottom: 8px;
   }
 
-  .result.ng {
-    display: block;
-    color: var(--danger);
-    border-color: rgba(240, 74, 74, 0.45);
-  }
-
-  .keyBox {
-    margin-top: 12px;
-    padding: 12px;
-    background: rgba(255,255,255,0.04);
-    border: 1px solid var(--border);
-    color: var(--text);
-    font-size: 11px;
-    line-height: 1.6;
-    word-break: break-all;
-  }
-
-  .copyBtn {
-    margin-top: 12px;
-    width: 100%;
+  .trial-message p {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.8;
   }
 
   .notes-block {
@@ -943,6 +918,10 @@
       grid-template-columns: 1fr;
     }
 
+    .trial-grid {
+      grid-template-columns: 1fr;
+    }
+
     .safety-block {
       padding: 28px 24px;
     }
@@ -1026,7 +1005,7 @@
 
 <nav>
   <a href="#" class="nav-logo">Obs<span>●</span>rver</a>
-  <span class="nav-badge">Early Access</span>
+  <span class="nav-badge">Trial 5/day</span>
 </nav>
 
 <section class="hero">
@@ -1039,11 +1018,12 @@
   <div class="hero-sub">
     <p>スマホから一言。</p>
     <p>PC上のObserverが、コード修正・ビルド確認・失敗時の復元まで進めます。</p>
+    <p>Trialはキーなし・登録なし。1日5回まで試せます。</p>
     <p>Kotlin / Compose開発者向け Early Access版。</p>
   </div>
 
   <div class="hero-actions">
-    <a href="#trial" class="btn-primary">→ Trial Keyを発行する</a>
+    <a href="#trial" class="btn-primary">→ 無料Trialを見る</a>
     <a href="#founder" class="btn-secondary">Founder Accessを見る</a>
   </div>
 
@@ -1068,9 +1048,9 @@
       <strong>利用例</strong>
       <span>スマホ連携</span>
     </a>
-    <a href="#notes">
-      <strong>注意</strong>
-      <span>Early Access</span>
+    <a href="#trial">
+      <strong>Trial</strong>
+      <span>登録なし</span>
     </a>
   </div>
 
@@ -1103,7 +1083,7 @@
   <div class="intro-grid">
     <div class="intro-cell">
       <h3>概要</h3>
-      <p>ObserverはPC上で常駐して動く自律型AIエージェントです。Telegramからの指示を受け取り、Kotlinコードの編集・ビルド・エラー検知・復元まで一連の作業を自動で行います。</p>
+      <p>ObserverはPC上で常駐して動く自律型AIエージェントです。Telegramからの指示を受け取り、Kotlinコードの編集・ビルド・エラー検知・復元まで一連の作業を進めることを目指します。</p>
     </div>
     <div class="intro-cell">
       <h3>対象ユーザー</h3>
@@ -1114,8 +1094,8 @@
       <p>Windows PC（Compose Desktop）で動作します。起動はbatファイルをダブルクリックするだけ。インストーラ不要・シンプルな設計です。</p>
     </div>
     <div class="intro-cell">
-      <h3>開発思想</h3>
-      <p>「壊れにくいこと」「戻れること」を最優先に設計されています。AIが自律で動く以上、安全に止まれることが最も重要な機能です。</p>
+      <h3>Trial</h3>
+      <p>Trialはキーなし・登録なしで利用できます。1日5回まで、Observerの基本動作を確認できます。購入前にまず動かしてみたい方向けです。</p>
     </div>
   </div>
 </section>
@@ -1160,8 +1140,7 @@
         正式リリース後もFounderとして記録されます。
       </p>
       <p class="note">
-        これはEarly Access版です。製品は現在も開発中であり、一部の機能は今後のアップデートで追加されます。
-        将来のPro機能・クラウド中継・複数端末同期などは別プランになる場合があります。
+        Trialはキーなし・登録なしで1日5回まで利用できます。既存ファイル編集・高度な自動化・自動修復系機能などを本格的に使う場合は、Founder Accessで解放されます。
       </p>
     </div>
   </div>
@@ -1231,7 +1210,7 @@
     <div class="feature-item">
       <div class="feature-icon">↩️</div>
       <div class="feature-name">安全な復元</div>
-      <div class="feature-desc">失敗が続く場合、編集前の安全な状態へ自動でロールバックします。</div>
+      <div class="feature-desc">失敗が続く場合、編集前の安全な状態へロールバックします。</div>
     </div>
     <div class="feature-item">
       <div class="feature-icon">🧠</div>
@@ -1271,7 +1250,7 @@
           <li>スマホからObserver Botへ <strong>/start</strong> を送信</li>
           <li>Observer側で接続確認し、通知・承認・作業指示を有効化</li>
         </ol>
-        <p>Bot Tokenは外部に公開しないでください。Trial版では、接続確認と基本操作から開始します。</p>
+        <p>Bot Tokenは外部に公開しないでください。Trialでも接続確認と基本操作を試せます。</p>
       </div>
     </div>
 
@@ -1300,33 +1279,58 @@
 <hr class="divider">
 
 <section class="section" id="trial">
-  <p class="section-label">動作確認 / Trial版</p>
-  <h2 class="section-title">購入前に試したい方向けのTrial Keyを発行できます。</h2>
+  <p class="section-label">Trial版</p>
+  <h2 class="section-title">キーなし・登録なし。1日5回まで、すぐに試せます。</h2>
 
   <div class="trial-block">
     <div>
-      <h3>まず試してみたい方へ</h3>
+      <h3>購入前に、まず動かして確認できます。</h3>
       <p>
-        メールアドレスを入力すると、Observer Trial License Key を発行します。<br>
-        発行されたキーをObserver本体のLicense Key欄に貼り付けてください。
+        Observer Trialは、License Keyの入力もメール登録も不要です。<br>
+        Observer本体を起動すると、自動的にTrial扱いで利用できます。
       </p>
       <p style="margin-top: 8px;">
-        Trialは初回認証から168時間有効です。
+        Trialでは、1日5回まで基本的なやり取りを試せます。
+        既存ファイル編集や高度な自動化はFounder Accessで解放されます。
       </p>
     </div>
 
-    <div class="trial-form">
-      <label for="email">Email address</label>
-      <input id="email" type="email" placeholder="you@example.com" autocomplete="email">
-      <button id="requestBtn" type="button" class="btn-primary">Trial Keyを発行する</button>
-
-      <div class="trial-api-note">
-        Test API:
-        <br>
-        <span>https://edward-inch-stuffed-guild.trycloudflare.com/trial/request</span>
+    <div class="trial-grid">
+      <div class="trial-cell">
+        <h4>Trialでできること</h4>
+        <ul>
+          <li>キーなしで利用開始</li>
+          <li>メール登録なし</li>
+          <li>1日5回までやり取り可能</li>
+          <li>新規ファイル作成</li>
+          <li>簡単な生成・動作確認</li>
+          <li>Telegram連携の基本確認</li>
+        </ul>
       </div>
 
-      <div id="result" class="result"></div>
+      <div class="trial-cell">
+        <h4>Founderで解放されること</h4>
+        <ul>
+          <li>既存ファイル編集</li>
+          <li>Kotlinコード編集</li>
+          <li>関数追加 / 置き換え</li>
+          <li>ビルド確認と復元フロー</li>
+          <li>自動修復系機能</li>
+          <li>商用利用OK</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="trial-message">
+      <strong>Trialの始め方</strong>
+      <p>
+        追加登録は不要です。Observerを起動し、通常どおり指示を送るだけでTrialとして動作します。
+        1日の利用回数を超えた場合は、翌日まで待つかFounder Accessをご利用ください。
+      </p>
+    </div>
+
+    <div>
+      <a href="#founder" class="btn-primary">Founder Accessを見る →</a>
     </div>
   </div>
 </section>
@@ -1341,6 +1345,7 @@
     <h3>Observer Founder Access について</h3>
     <p>
       本製品はEarly Access版です。現在も開発が進行中であり、バグ・仕様変更・機能追加が発生する可能性があります。<br><br>
+      Trialはキーなし・登録なしで1日5回まで利用できます。Trialは動作確認向けであり、既存コード編集・高度な自動化・自動修復系機能などはFounder Accessで解放されます。<br><br>
       現在のEarly Access版は、Kotlin / Compose系プロジェクトでの遠隔指示・ファイル編集・ビルド確認を中心とした初期版です。音声操作、顔UI、完全自律研究機能、複数端末同期などは今後の拡張予定です。<br><br>
       クラウド中継・複数端末同期・将来のPro機能などは、Founder Accessには含まれず別プランになる場合があります。<br><br>
       動作環境：Windows PC、Telegram、Java（JDK）が必要です。詳細はGitHubのREADMEをご確認ください。
@@ -1356,106 +1361,6 @@
     <a href="https://x.com" target="_blank" rel="noopener">X / Twitter</a>
   </div>
 </footer>
-
-<script>
-  const API_URL = "https://edward-inch-stuffed-guild.trycloudflare.com/trial/request";
-
-  const emailInput = document.getElementById("email");
-  const requestBtn = document.getElementById("requestBtn");
-  const result = document.getElementById("result");
-
-  function escapeHtml(value) {
-    return String(value)
-      .replaceAll("&", "&amp;")
-      .replaceAll("<", "&lt;")
-      .replaceAll(">", "&gt;")
-      .replaceAll('"', "&quot;")
-      .replaceAll("'", "&#039;");
-  }
-
-  function showResult(type, html) {
-    result.className = "result " + type;
-    result.innerHTML = html;
-  }
-
-  async function copyText(text) {
-    try {
-      await navigator.clipboard.writeText(text);
-      alert("License Keyをコピーしました。");
-    } catch (e) {
-      alert("コピーできませんでした。手動で選択してコピーしてください。");
-    }
-  }
-
-  requestBtn.addEventListener("click", async () => {
-    const email = emailInput.value.trim();
-
-    if (!email || !email.includes("@")) {
-      showResult("ng", "メールアドレスを入力してください。");
-      return;
-    }
-
-    requestBtn.disabled = true;
-    requestBtn.textContent = "発行中...";
-
-    try {
-      const response = await fetch(API_URL, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ email })
-      });
-
-      const data = await response.json().catch(() => null);
-
-      if (!data) {
-        showResult("ng", "サーバーから正しい応答を受け取れませんでした。");
-        return;
-      }
-
-      if (!response.ok || data.ok === false) {
-        showResult(
-          "ng",
-          "発行できませんでした。\n\n理由: " + escapeHtml(data.message || "Unknown error")
-        );
-        return;
-      }
-
-      const licenseKey = data.licenseKey || "";
-      const tier = data.tier || "TRIAL";
-      const keyId = data.keyId || "-";
-      const message = data.message || "License issued";
-
-      showResult(
-        "ok",
-        "発行成功\n\n" +
-        "Tier: " + escapeHtml(tier) + "\n" +
-        "Key ID: " + escapeHtml(keyId) + "\n" +
-        "Message: " + escapeHtml(message) +
-        "<div class='keyBox' id='licenseKeyBox'>" + escapeHtml(licenseKey) + "</div>" +
-        "<button class='btn-secondary copyBtn' type='button' id='copyBtn'>License Keyをコピー</button>"
-      );
-
-      const copyBtn = document.getElementById("copyBtn");
-      copyBtn.addEventListener("click", () => copyText(licenseKey));
-
-    } catch (e) {
-      showResult(
-        "ng",
-        "接続できませんでした。\n\n" +
-        "原因候補:\n" +
-        "・ObserverLicenseServerが起動していない\n" +
-        "・Cloudflare Tunnel URLが変わっている\n" +
-        "・CORSが未設定\n\n" +
-        "詳細: " + escapeHtml(e.message)
-      );
-    } finally {
-      requestBtn.disabled = false;
-      requestBtn.textContent = "Trial Keyを発行する";
-    }
-  });
-</script>
 
 </body>
 </html>
